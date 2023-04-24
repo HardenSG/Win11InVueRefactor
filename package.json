@@ -1,0 +1,46 @@
+{
+  "name": "template_for_frontend",
+  "version": "1.0.0",
+  "description": "This Is a template for frontend",
+  "author": "HardenSG",
+  "scripts": {
+    "dev:core": "pnpm -F core dev",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "reset": "rm -rf node_modules"
+  },
+  "keywords": [
+    "Vite",
+    "Vue3",
+    "Pinia",
+    "VueRouter",
+    "monorepo",
+    "Typescript"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HardenSG/monorepo-frontend/issues"
+  },
+  "homepage": "https://github.com/HardenSG/monorepo-frontend/blob/main/README.md",
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "chalk": "^4.1.2",
+    "cross-env": "7.0.3",
+    "dotenv": "16.0.3",
+    "eslint": "^8.39.0",
+    "husky": "^8.0.3",
+    "lint-staged": "12.5.0",
+    "prettier": "2.7.1",
+    "vitest": "^0.30.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,mjsx,cjs,cjsx}": [
+      "eslint --fix --color",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space //缩进风格，可选配置有 `tab` 和 `space` 
+indent_size = 2      //缩进大小，可设定为 `1-8` 的数字，比如设定为 `2` ，那就是缩进 `2` 个空格。
+end_of_line = lf     //换行符，可选配置有 `lf` ，`cr` ，`crlf`
+charset = utf-8      //编码格式，通常都是选 `utf-8` 
+trim_trailing_whitespace = false  //去除多余的空格
+insert_final_newline = false      //在尾部插入一行
+
+[*.{js,jsx,ts,tsx,mjs,mjsx,cjs,cjsx,sh,rb}]
+max_line_length = 80
+trim_trailing_whitespace = true
+
+[*.{css,scss,less,html,hbs,ejs,json,code-workspace,yml,yaml,gql}]
+trim_trailing_whitespace = true
