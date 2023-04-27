@@ -1,4 +1,4 @@
 import Scheduler from '../Scheduler/core/Scheduler'
-import { SchedulerInter } from '../Scheduler'
+import { type SchedulerInter } from '../Scheduler'
 
 export { Scheduler, SchedulerInter }

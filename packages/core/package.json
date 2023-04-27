@@ -13,7 +13,10 @@
   "dependencies": {
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "utils": "workspace:^1.0.0",
+    "app": "workspace:^1.0.0",
+    "publicComp": "workspace:^1.0.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.0",

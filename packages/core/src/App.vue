@@ -1,14 +1,10 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Loading from '@Com/Loading/index.vue'
-import Bottom from '@Com/bottom/index.vue'
-import { a, BindGlobal } from '@utils/index'
+import * as All from 'app/src/index'
+import { Scheduler } from 'utils'
 
-import demoStore from '@stores/demoStores'
-const store = demoStore()
-store.cacheDemoList([1, 2, 3, 4])
-
-console.log(store.getDemoList)
+console.log(new Scheduler(All.default))
 </script>
 
 <template>

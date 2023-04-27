@@ -1,4 +1,4 @@
-import { CustomComponentInter, VNode, CUSTOM_COMPONENT } from '../types'
+import { type CustomComponentInter, type VNode, CUSTOM_COMPONENT } from '../types'
 
 export default class CustomComponent implements CustomComponentInter {
   readonly [CUSTOM_COMPONENT.isCustomComponent] = true

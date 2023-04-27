@@ -6,13 +6,14 @@ module.exports = {
   },
 
   extends: ['standard', 'plugin:prettier/recommended', 'prettier'],
-  // parser: "vue-eslint-parser",
-  parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
+  // parser: '@typescript-eslint/parser',
 
   parserOptions: {
     requireConfigFile: false,
     sourceType: 'module',
-    parser: 'babel-eslint',
+    // parser: 'babel-eslint',
+    parser: '@typescript-eslint/parser',
     // parser: "@babel/eslint-parser",
     // requireConfigFile: false,
   },

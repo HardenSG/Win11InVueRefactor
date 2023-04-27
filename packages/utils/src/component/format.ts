@@ -1,4 +1,9 @@
-export function formatInitComponent(vNode, appName, iconImg, IsFixTaskBar: boolean) {
+export function formatInitComponent(
+  vNode: any,
+  appName: string,
+  iconImg: string,
+  IsFixTaskBar: boolean,
+) {
   const type = vNode
   const isMount = false
   const customZIndex = -1

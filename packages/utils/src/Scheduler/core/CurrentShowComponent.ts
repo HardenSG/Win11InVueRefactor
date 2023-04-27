@@ -1,4 +1,8 @@
-import { CurrentShowComponentInter, CustomComponentInter, CUSTOM_COMPONENT } from '../types'
+import {
+  type CurrentShowComponentInter,
+  type CustomComponentInter,
+  CUSTOM_COMPONENT,
+} from '../types'
 
 export default class CurrentShowComponent implements CurrentShowComponentInter {
   readonly [CUSTOM_COMPONENT.isCurrentShowComponent] = true

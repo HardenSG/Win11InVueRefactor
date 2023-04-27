@@ -31,7 +31,11 @@ export function filterGarbageComponent<T>(origin: Array<T>, property: any, value
  * @param value target property's value
  * @returns T
  */
-export function catchTargetComponent<T>(origin: Array<T>, property: any, value: any): T {
+export function catchTargetComponent<T>(
+  origin: Array<T>,
+  property: any,
+  value: any,
+): T | undefined {
   const handles = (v: T) => {
     return v[property] == value
   }
