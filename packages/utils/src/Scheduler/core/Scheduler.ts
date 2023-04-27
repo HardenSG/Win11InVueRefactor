@@ -10,6 +10,7 @@ export default class Scheduler implements SchedulerInter {
   maxTrie: number
 
   constructor(VNodes: any) {
+    // MARK: remove console
     console.log(VNodes)
 
     this.components = []
@@ -20,7 +21,6 @@ export default class Scheduler implements SchedulerInter {
 
     this.Init(VNodes)
   }
-  addCurrentShowComponent: (component: CustomComponentInter) => void
 
   Init(CustomComponents: any) {
     this.handleComponent(CustomComponents)

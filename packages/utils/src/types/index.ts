@@ -1,3 +1,3 @@
 export * from './Component'
 export * from './Scheduler'
-export * from './useScheduler'
+export * from '../Scheduler/types/useScheduler'

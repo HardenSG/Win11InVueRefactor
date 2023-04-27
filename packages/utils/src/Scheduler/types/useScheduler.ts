@@ -1,13 +1,15 @@
-import { CurrentShowComponentInter, CustomComponentInter, SchedulerInter } from '../Scheduler'
+import { CurrentShowComponentInter, CustomComponentInter, SchedulerInter } from '.'
 
-export interface UseSchedulerDate {
-  scheduler: SchedulerInter
+export interface UseSchedulerData {
+  scheduler: SchedulerInter | null
+  [p: string]: any
 }
 
 export interface UseSchedulerGetter<T> {
   component: (state: T) => CustomComponentInter[]
   fixedComponent: (state: T) => CustomComponentInter[]
   currentShowComponent: (state: T) => CurrentShowComponentInter[]
+  [p: string]: any
 }
 
 export interface UseSchedulerActions {
@@ -17,4 +19,5 @@ export interface UseSchedulerActions {
   syncHideComponentData: (uuid: number, isRemove: boolean) => boolean
   syncShowComponentData: (uuid: number, isTaskBar: boolean) => boolean
   toggleZIndexComponent: (uuid: number) => void
+  [p: string]: any
 }
