@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Loading from '@Com/Loading/index.vue'
-import * as All from 'app/src/index'
-import { Scheduler } from '@utils/index'
-
-console.log(new Scheduler(All.default))
 </script>
 
 <template>
@@ -30,4 +26,16 @@ console.log(new Scheduler(All.default))
   </RouterView>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+body {
+  overflow: hidden;
+}
+#app {
+  width: 100vw;
+  height: 100vh;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  overflow: hidden;
+  transition: 0.8s;
+}
+</style>

@@ -1,5 +1,4 @@
-import { isObj } from '../baseHandles'
-import { normalizeArray } from '../baseHandles/array'
+import { isObj, normalizeArray } from '..'
 
 function baseCatch<T>(origin: Array<T>, handles: any): T[] {
   if (!isObj(origin)) {

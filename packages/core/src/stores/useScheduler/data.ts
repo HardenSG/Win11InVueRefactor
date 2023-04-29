@@ -8,7 +8,7 @@ export default {
   },
   getters: {
     component: (state: UseSchedulerData) => state.scheduler?.components || [],
-    fixedComponent: (state: UseSchedulerData) => state.scheduler?.fixTaskBarComponent || [],
+    fixTaskBarComponent: (state: UseSchedulerData) => state.scheduler?.fixTaskBarComponent || [],
     currentShowComponent: (state: UseSchedulerData) => state.scheduler?.currentShowComponent || [],
   },
 }

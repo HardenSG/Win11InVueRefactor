@@ -1,11 +1,13 @@
 <template>
   <div class="EdgeFullBox FullBox">
-    <!-- <ToolBarVue></ToolBarVue> -->
+    <ToolBarVue>Setting ToolBar</ToolBarVue>
     <main class="edge">Setting</main>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ToolBarVue from 'public_comp/src/ToolBar/index.vue'
+</script>
 
 <style lang="scss" scoped>
 .EdgeFullBox {

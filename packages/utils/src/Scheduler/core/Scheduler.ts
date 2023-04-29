@@ -1,5 +1,5 @@
-import { hasOwn, isInteger } from '../../baseHandles'
-import { catchTargetComponent, filterGarbageComponent, isCustomComponent } from '../../component'
+import { hasOwn, isInteger } from '../../BaseHandles'
+import { catchTargetComponent, filterGarbageComponent, isCustomComponent } from '../../Component'
 import type { CustomComponentInter, CurrentShowComponentInter, SchedulerInter } from '../types'
 
 export default class Scheduler implements SchedulerInter {
@@ -122,5 +122,7 @@ export default class Scheduler implements SchedulerInter {
 
   // MARK: feature
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  adjustComponentTier(uuid: number) {}
+  adjustComponentTier(uuid: number) {
+    console.log(uuid)
+  }
 }

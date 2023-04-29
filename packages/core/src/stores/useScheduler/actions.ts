@@ -21,7 +21,7 @@ const actions: UseSchedulerActions = {
   installComponents(component: CustomComponentInter): void {
     ;(this.scheduler as SchedulerInter).installComponents(component)
   },
-  syncHideComponentData(uuid: number, isRemove: boolean): boolean {
+  syncHideComponentData(uuid: number, isRemove?: boolean): boolean {
     if (!isInteger(uuid)) {
       throw new Error('RECEIVER PARAMS NOT A NUMBER')
     }
@@ -61,7 +61,8 @@ const actions: UseSchedulerActions = {
     //       这show，所代表的含义是是否存在节点
     return targetComponent.isHide
   },
-  syncShowComponentData(uuid: number, isTaskBar: boolean): boolean {
+  syncShowComponentData(uuid: number, isTaskBar?: boolean): boolean {
+    console.log(uuid)
     if (!isInteger(uuid)) {
       throw new Error('RECEIVER PARAMS NOT A NUMBER')
     }

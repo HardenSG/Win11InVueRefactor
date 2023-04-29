@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "dependencies": {
     "utils": "workspace:^1.0.0",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "public_comp": "workspace:^1.0.0"
   },
   "devDependencies": {
     "@types/animejs": "^3.1.5",

@@ -1,3 +1,3 @@
 import Setting from './Setting/index'
 
-export default { Setting }
+export { Setting }

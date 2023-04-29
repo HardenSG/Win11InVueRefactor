@@ -16,7 +16,7 @@
     "vue-router": "^4.1.6",
     "utils": "workspace:^1.0.0",
     "app": "workspace:^1.0.0",
-    "publicComp": "workspace:^1.0.0"
+    "public_comp": "workspace:^1.0.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.0",
