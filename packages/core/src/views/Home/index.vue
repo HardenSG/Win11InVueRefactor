@@ -16,17 +16,17 @@ import UseScheduler from '@stores/useScheduler'
 import render from './renderQueue'
 import renderFunc from './render'
 import type { taskBarRenderList } from './type'
-import { judgeComponentChange } from './hook'
+// import { judgeComponentChange } from './hook'
 
 const store = UseScheduler()
 const components = reactive<any[]>([])
-const judgeIsChange = judgeComponentChange(store)
+// const judgeIsChange = judgeComponentChange(store)
 
 const computeComponents = computed<taskBarRenderList>(() => {
   if (store.component.length) {
     // if (judgeIsChange()) {
     // }
-    console.log(judgeIsChange())
+    // console.log(judgeIsChange())
 
     const len = components.length
     // eslint-disable-next-line vue/no-side-effects-in-computed-properties

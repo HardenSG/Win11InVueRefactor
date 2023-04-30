@@ -111,4 +111,27 @@ Therefore, on the computed phase of `components/taskbar.vue`, we have to divide 
 
 Anything that isn't `fixTaskBarComponent` is handled directly according to isHide
 
+## About app
+
+1. First raise a question: If a custom application needs `store` or `other data` for the linkage between third-party apps, how to achieve this?
+
+> This requires step by step thinking about why this is necessary and what are some examples of such application scenarios; How to achieve cross-application data sharing, how to achieve cross-application data changes....
+
+I believe that there is definitely more than one solution to how to share data between components, including the three ways of implementing the above thought: `props`, `store` , `provide` there must be other solutions that can be implemented. However, in either case, the following principles need to be observed:
+
++ Whether reasonable and secure data flow is complied with
++ code accessible security: (cannot open all private data to users)
++ Complexity of code and data flow
++...
+
+---
+
+1. As for `props`, I don't think it's a good choice, although you can customize whether to receive `props` or not, but at the beginning of the mounting of a component, the center should be placed on them, and it's not possible to insert third party data into another `app` `props`
+2. In the case of `store`, consider whether it is necessary to introduce a new package, and although the `store data` can be customized by the `app`, then the import of the `store` must be exported to the third party `app's store` via a `core` `repo` file, or, Do you think it's good to introduce a third-party `app` directly into another `app's` store?
+
+Therefore, I think the best solution is still in the form of `dependency injection`. The application can introduce the exposed data of other `apps` conveniently. It only needs simple `inject` to get the data you want. At the same time, during the mounting period of components, it is necessary to traverse the components to be mounted and `provide` the exposed data when detected. Since components need to be mounted to `core/Home/index.vue` in the end, all component data sharing can be realized. To do this, however, you need to modify the `CustomComponent` and update the logic of `HOC`.
+> However, the following should be noted when writing
+The name + `provide` needs to indicate the component name and user-defined data name, which can be separated by the following lines, such as: `Folder_FolderData`. Users need to indicate when using it to prevent confusion, so the data name needs to be determined by RE during the registration period
++....
+
 To be continued....

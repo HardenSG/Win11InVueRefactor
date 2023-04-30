@@ -32,6 +32,7 @@ export const HOCPluginComponent = (isTaskBar: boolean, componentConfig: CustomCo
               if (customZIndex.value > 0) {
                 return
               }
+              // MARK: remove console
               console.log(componentConfig, isMount, customZIndex)
               store.toggleZIndexComponent(uuid)
             } else {
