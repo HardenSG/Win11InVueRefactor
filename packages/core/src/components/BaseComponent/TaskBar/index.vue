@@ -73,7 +73,7 @@ const store = UseScheduler()
 // const components1 = computed(() => props.list.length && props.list)
 const components = computed<taskBarRenderList>(() => {
   // MARK: remove console
-  console.log('propslist -->', props.list)
+  // console.log('propslist -->', props.list)
 
   if ((props.list as taskBarRenderList)[1].length) {
     /**

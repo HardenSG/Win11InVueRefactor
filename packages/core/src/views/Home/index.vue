@@ -1,9 +1,11 @@
 <template>
   <div class="all">
+    <div class="DeskTop">
+      <renderFunc :list="components" />
+    </div>
     <div class="bar">
       <TaskBarVue :list="computeComponents"></TaskBarVue>
     </div>
-    <renderFunc :list="components" />
   </div>
 </template>
 
@@ -16,6 +18,7 @@ import UseScheduler from '@stores/useScheduler'
 import render from './renderQueue'
 import renderFunc from './render'
 import type { taskBarRenderList } from './type'
+
 // import { judgeComponentChange } from './hook'
 
 const store = UseScheduler()
@@ -31,9 +34,6 @@ const computeComponents = computed<taskBarRenderList>(() => {
     const len = components.length
     // eslint-disable-next-line vue/no-side-effects-in-computed-properties
     components.splice(0, len, ...render(store.component))
-
-    // MARK: remove console
-    console.log('home/components --> ', components)
 
     return [store.fixTaskBarComponent, store.currentShowComponent]
   }
@@ -53,7 +53,7 @@ provide<ReturnType<typeof UseScheduler>>('UseScheduler', store)
 
 watchEffect(() => {
   // MARK: remove console
-  console.log(computeComponents.value)
+  // console.log('computedComponent --> ', computeComponents.value)
 })
 
 // setTimeout(() => {
@@ -87,14 +87,19 @@ document.addEventListener('keyup', (e) => {
 .all {
   width: 100vw;
   height: 100vh;
+  background-color: red;
 
-  .main {
-    height: calc(100% - 48px);
+  // .main {
+  //   height: calc(100% - 48px);
+  //   width: 100%;
+  // }
+  .DeskTop {
+    height: calc(100vh - 48px);
     width: 100%;
   }
   .bar {
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     height: 48px;
     width: 100%;
   }

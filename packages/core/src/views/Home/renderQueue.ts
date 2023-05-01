@@ -7,8 +7,6 @@ export default (props: CustomComponentInter[]) => {
   props = toRaw(props)
 
   const renderQueue = (): any[] => {
-    console.log(props)
-
     return props.map((c) => {
       return h(HOCPluginComponent(false, c), {
         class: styles.deskTopIcon,

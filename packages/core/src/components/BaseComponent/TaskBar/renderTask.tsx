@@ -18,7 +18,8 @@ export const renderFixTask = defineComponent({
   },
   setup(props) {
     const isShowComponent = isCurrentShowComponent(props.item)
-    console.log(isShowComponent)
+    // MARK: remove console
+    // console.log(isShowComponent)
 
     // MARK: appName
     const { uuid } = props.item as CustomComponent

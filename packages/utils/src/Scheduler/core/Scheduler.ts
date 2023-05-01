@@ -109,7 +109,8 @@ export default class Scheduler implements SchedulerInter {
     return true
   }
   updateCurrentShowComponent(component: CurrentShowComponentInter[]) {
-    this.currentShowComponent = component
+    const len = this.currentShowComponent.length
+    this.currentShowComponent.splice(0, len, ...component)
   }
 
   judgeMaxTrie(customZIndex: number) {

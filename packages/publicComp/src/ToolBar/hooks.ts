@@ -36,7 +36,11 @@ export const getBrowserVPort = () => {
 }
 
 export const useMaxOrMinIcon = (dom: Ref<HTMLElement | any>): (() => [Ref, Function]) => {
+  console.log(1111)
+
   return () => {
+    console.log(maxIcon)
+
     const maxOrMin = ref<string>(maxIcon)
     const updateIcon = () => {
       const isFullSize = isFullScreen(dom.value)

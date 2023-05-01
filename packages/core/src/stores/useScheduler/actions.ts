@@ -16,6 +16,7 @@ const actions: UseSchedulerActions = {
     return this
   },
   updateCurrentShowComponent(components: CurrentShowComponentInter[]): void {
+    // TODO: 优化点
     ;(this.scheduler as SchedulerInter).updateCurrentShowComponent(normalizeArray(components))
   },
   installComponents(component: CustomComponentInter): void {
