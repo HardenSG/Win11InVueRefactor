@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Loading from '@Com/Loading/index.vue'
+import { CustomLocalStorage } from 'utils'
+const ls = new CustomLocalStorage('SG', 60)
+// ls.setItem<string>('SG', '21', true)
+console.log(ls.getItem<string>('SG'))
 </script>
 
 <template>
