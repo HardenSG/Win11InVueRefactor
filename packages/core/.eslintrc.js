@@ -26,6 +26,8 @@ module.exports = {
     'space-before-function-paren': 'off',
     'vue/multi-word-component-names': 'off',
     'no-undef': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/ban-types': [
       'error',

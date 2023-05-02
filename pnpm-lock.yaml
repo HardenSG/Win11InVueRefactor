@@ -179,13 +179,19 @@ importers:
 
   packages/utils:
     specifiers:
+      '@types/crypto-js': ^4.1.1
       '@types/node': ^18.15.13
+      core: workspace:^0.0.0
+      crypto-js: ^4.1.1
       typescript: ~4.8.4
       vue: ^3.2.47
       vue-tsc: ^1.4.2
     dependencies:
+      core: link:../core
+      crypto-js: registry.npmmirror.com/crypto-js/4.1.1
       vue: registry.npmmirror.com/vue/3.2.47
     devDependencies:
+      '@types/crypto-js': registry.npmmirror.com/@types/crypto-js/4.1.1
       '@types/node': registry.npmmirror.com/@types/node/18.15.13
       typescript: registry.npmmirror.com/typescript/4.8.4
       vue-tsc: registry.npmmirror.com/vue-tsc/1.4.2_typescript@4.8.4
@@ -1254,6 +1260,12 @@ packages:
     resolution: {integrity: sha512-KnRanxnpfpjUTqTCXslZSEdLfXExwgNxYPdiO2WGUj8+HDjFi8R3k5RVKPeSCzLjCcshCAtVO2QBbVuAV4kTnw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/chai/-/chai-4.3.4.tgz}
     name: '@types/chai'
     version: 4.3.4
+    dev: true
+
+  registry.npmmirror.com/@types/crypto-js/4.1.1:
+    resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/crypto-js/-/crypto-js-4.1.1.tgz}
+    name: '@types/crypto-js'
+    version: 4.1.1
     dev: true
 
   registry.npmmirror.com/@types/jsdom/21.1.1:
@@ -2851,6 +2863,12 @@ packages:
       shebang-command: registry.npmmirror.com/shebang-command/2.0.0
       which: registry.npmmirror.com/which/2.0.2
     dev: true
+
+  registry.npmmirror.com/crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/crypto-js/-/crypto-js-4.1.1.tgz}
+    name: crypto-js
+    version: 4.1.1
+    dev: false
 
   registry.npmmirror.com/cssesc/3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cssesc/-/cssesc-3.0.0.tgz}
