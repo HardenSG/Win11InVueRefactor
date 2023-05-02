@@ -23,26 +23,3 @@ export interface StorageItemInter<T> {
   getValue: () => T
   judgeIsOvertime: () => boolean
 }
-export class StorageItem<T> implements StorageItemInter<T> {
-  _value: T
-  expires: number
-  constructor(value: T, expires: number, isDecrypt: boolean) {
-    this._value = value
-    if (!isDecrypt) {
-      console.log('加时间')
-
-      this.expires = Date.now() + expires * 1000
-    } else {
-      this.expires = expires
-    }
-  }
-  getValue() {
-    return this._value
-  }
-  judgeIsOvertime() {
-    const currentTime = Date.now()
-    console.log(currentTime, this.expires)
-
-    return this.expires < currentTime
-  }
-}

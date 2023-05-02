@@ -1,4 +1,4 @@
-import { CustomStorageInter, StorageItem, StorageItemInter } from './types'
+import { CustomStorageInter, StorageItemInter } from './types'
 import CryptoJS from 'crypto-js'
 
 import { LSOptions } from './types'
@@ -34,6 +34,28 @@ export const JSONStringify = (
     if (!noError) {
       throw e
     }
+  }
+}
+
+export class StorageItem<T> implements StorageItemInter<T> {
+  _value: T
+  expires: number
+  constructor(value: T, expires: number, isDecrypt: boolean) {
+    this._value = value
+    if (!isDecrypt) {
+      this.expires = Date.now() + expires * 1000
+    } else {
+      this.expires = expires
+    }
+  }
+  getValue() {
+    return this._value
+  }
+  judgeIsOvertime() {
+    const currentTime = Date.now()
+    console.log(currentTime, this.expires)
+
+    return this.expires < currentTime
   }
 }
 
@@ -79,6 +101,6 @@ export class CustomLocalStorage implements CustomStorageInter {
       throw new Error(`【获取失败】： 过期了`)
     }
 
-    return decrypted._value
+    return JSONParse(decrypted._value)
   }
 }
