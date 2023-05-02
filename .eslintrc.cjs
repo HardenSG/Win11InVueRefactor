@@ -6,15 +6,11 @@ module.exports = {
   },
   extends: ['eslint:recommended', 'plugin:vue/essential', 'plugin:@typescript-eslint/recommended'],
   parser: 'vue-eslint-parser',
-  // parser: '@typescript-eslint/parser',
 
   parserOptions: {
     requireConfigFile: false,
     sourceType: 'module',
-    // parser: 'babel-eslint',
     parser: '@typescript-eslint/parser',
-    // parser: "@babel/eslint-parser",
-    // requireConfigFile: false,
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
