@@ -1,18 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Loading from '@Com/Loading/index.vue'
-// import { Ls } from 'utils'
-// Ls('SG').setItem(
-//   'PG',
-//   {
-//     name: 'SG',
-//     age: 21,
-//   },
-//   false,
-//   1000
-// )
-// Ls('SG').setItem('M', 1, true, 1000)
-// console.log(Ls('SG').getItem('M'))
 </script>
 
 <template>

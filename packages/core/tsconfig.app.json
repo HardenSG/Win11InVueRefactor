@@ -12,7 +12,7 @@
       "@data/*": ["./src/data/*"],
       "@stores/*": ["./src/stores/*"],
       "@utils/*": ["./src/utils/*"],
-      "@view/*": ["./src/view/*"],
+      "@view/*": ["./src/view/*"]
     }
   }
 }

@@ -7,7 +7,6 @@ export default {
     }
   },
   getters: {
-    // TODO: create ls storage
     getThemeSrc: (state: UseSystemConfigData) => state.themeSrc || DEFAULT_THEME_IMG_SRC,
   },
 }

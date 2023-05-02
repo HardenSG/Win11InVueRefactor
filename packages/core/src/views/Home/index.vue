@@ -19,6 +19,9 @@ import UseSystemConfig from '@stores/useSystemConfig'
 import render from './renderQueue'
 import renderFunc from './render'
 import type { taskBarRenderList } from './type'
+import { Ls } from 'utils'
+import { SYSTEM_LOCAL_STORAGE_KEY } from '@/stores/useSystemConfig/types'
+import { DEFAULT_THEME_IMG_SRC } from '@/data'
 
 // import { judgeComponentChange } from './hook'
 
@@ -26,6 +29,7 @@ const schedulerStore = UseScheduler()
 const systemStore = UseSystemConfig()
 const reference = ref<HTMLElement>()
 const components = reactive<any[]>([])
+const ls = Ls()
 // const judgeIsChange = judgeComponentChange(store)
 
 const computeComponents = computed<taskBarRenderList>(() => {
@@ -52,6 +56,7 @@ watchEffect(() => {
 
   if (reference.value) {
     // MARK: set background image
+    systemStore.setThemeSrc(ls.getItem(SYSTEM_LOCAL_STORAGE_KEY.THEME_SRC) || DEFAULT_THEME_IMG_SRC)
     reference.value.style.backgroundImage = `url(${systemStore.getThemeSrc})`
   }
 })
@@ -88,7 +93,6 @@ document.addEventListener('keyup', (e) => {
 .all {
   width: 100vw;
   height: 100vh;
-  background-color: red;
   background-size: 100% 100%;
   background-attachment: fixed;
   .DeskTop {

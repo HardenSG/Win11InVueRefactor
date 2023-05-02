@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest",
@@ -11,12 +11,12 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
-    "pinia": "^2.0.32",
-    "vue": "^3.2.47",
-    "vue-router": "^4.1.6",
-    "utils": "workspace:^1.0.0",
     "app": "workspace:^1.0.0",
-    "public_comp": "workspace:^1.0.0"
+    "pinia": "^2.0.32",
+    "public_comp": "workspace:^1.0.0",
+    "utils": "workspace:^1.0.0",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.0",

@@ -1,5 +1,6 @@
 import { CustomStorageInter, StorageItemInter } from './types'
 import CryptoJS from 'crypto-js'
+import config from 'core/src/proj.config'
 
 import { LSOptions } from './types'
 import { isNil } from '..'
@@ -43,7 +44,11 @@ export class StorageItem<T> implements StorageItemInter<T> {
   constructor(value: T, expires: number, isDecrypt: boolean) {
     this._value = value
     if (!isDecrypt) {
-      this.expires = Date.now() + expires * 1000
+      if (expires !== -1) {
+        this.expires = Date.now() + expires * 1000
+      } else {
+        this.expires = -1
+      }
     } else {
       this.expires = expires
     }
@@ -52,8 +57,10 @@ export class StorageItem<T> implements StorageItemInter<T> {
     return this._value
   }
   judgeIsOvertime() {
+    if (this.expires == -1) {
+      return false
+    }
     const currentTime = Date.now()
-    console.log(currentTime, this.expires)
 
     return this.expires < currentTime
   }
@@ -63,10 +70,10 @@ export class CustomLocalStorage implements CustomStorageInter {
   public expires = -1
   public readonly secretToken: string
   private iv: CryptoJS.lib.WordArray
-  constructor(secretToken: string, expires?: number) {
-    this.secretToken = secretToken
-    this.expires = expires
-    this.iv = computeWordArray(secretToken)
+  constructor(secretToken?: string, expires?: number) {
+    this.secretToken = secretToken || config.LS_CONFIG.tokenSecret
+    this.expires = expires || config.LS_CONFIG.defaultExpires
+    this.iv = computeWordArray(secretToken || config.LS_CONFIG.IV)
   }
 
   setItem<T>(key: string, value: T, isRaw: boolean, expires?: number): void {
@@ -81,7 +88,8 @@ export class CustomLocalStorage implements CustomStorageInter {
   getItem<T>(key: string): any {
     const isExist = localStorage.getItem(key)
     if (!isExist) {
-      throw new Error('【恶意访问】： 你所访问的并不是一个存在的内容')
+      console.warn('【恶意访问】： 你所访问的并不是一个存在的内容')
+      return undefined
     }
 
     let decrypted
@@ -95,10 +103,12 @@ export class CustomLocalStorage implements CustomStorageInter {
     }
 
     if (!decrypted) {
-      throw new Error(`【获取失败】： 解析为空`)
+      console.warn(`【获取失败】： 解析为空`)
+      return undefined
     }
     if (decrypted.judgeIsOvertime()) {
-      throw new Error(`【获取失败】： 过期了`)
+      console.warn(`【获取失败】： 过期了`)
+      return undefined
     }
 
     return JSONParse(decrypted._value)
