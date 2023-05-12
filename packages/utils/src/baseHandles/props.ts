@@ -6,7 +6,7 @@ export function patchProperty(origin: object, propList: any) {
   }
 
   for (const k in propList) {
-    const v = propList[k]
+    const v = propList[k] as string
     if (k || v) {
       origin[k] = v
     }

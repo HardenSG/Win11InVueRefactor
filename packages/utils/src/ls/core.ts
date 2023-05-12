@@ -1,4 +1,4 @@
-import { CustomStorageInter, StorageItemInter } from './types'
+import type { CustomStorageInter, StorageItemInter } from './types'
 import CryptoJS from 'crypto-js'
 import config from 'core/src/proj.config'
 
